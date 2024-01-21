@@ -1,0 +1,14 @@
+{
+    "producs": [
+        {
+            "name": "Test Product",
+            "description": "This is a test product",
+            "prict": "10.00",
+            "category": "STICKER",
+            "tags": [
+                "test",
+                "item"
+            ]
+        }
+    ]
+}
