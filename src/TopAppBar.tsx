@@ -1,8 +1,10 @@
 import React from "react";
-import { Divider, Menu, MenuItem, AppBar, Box, Toolbar, Typography } from '@mui/material';
+import { Divider, Menu, MenuItem, AppBar, Box, Toolbar, Typography, ButtonBase } from '@mui/material';
+import { useNavigate } from "react-router-dom";
 
 const TopAppBar = () => {
 
+	const navigate = useNavigate();
 	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 	const open = Boolean(anchorEl);
 
@@ -16,9 +18,12 @@ const TopAppBar = () => {
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position="static" sx={{ backgroundColor: '#222' }}>
 				<Toolbar>
-					<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-						Studio Name
-					</Typography>
+					<ButtonBase onClick={() => navigate("/")} sx={{ flexGrow: 1, justifyContent: 'start' }}>
+						<Typography variant="h6" component="div">
+							Studio
+						</Typography>
+					</ButtonBase>
+					
 					<Typography sx={{ float: 'right' }}>
 						Placeholder
 					</Typography>

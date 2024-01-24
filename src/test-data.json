@@ -1,14 +1,57 @@
 {
-    "producs": [
+    "products": [
         {
-            "name": "Test Product",
+            "id": 1,
+            "name": "Test Product 1",
             "description": "This is a test product",
-            "prict": "10.00",
+            "price": "10.00",
             "category": "STICKER",
+            "materials": [
+                "matte",
+                "glossy",
+                "65lb",
+                "110lb"
+            ],
             "tags": [
                 "test",
                 "item"
-            ]
+            ],
+            "img": "https://cms.cloudinary.vpsvc.com/images/c_scale,dpr_auto,f_auto,q_auto:best,t_productPageHeroGalleryTransformation_v2,w_auto/legacy_dam/en-us/S001378582/BCMX225-NA-bc-matte-roundedcorner-standard-referential-hero-001?cb=0f280a2b816378b9c93b8c83c68f644af2aa96c3"
+        },
+        {
+            "id": 2,
+            "name": "Test Product 2",
+            "description": "This is a test product",
+            "price": "10.00",
+            "category": "STICKER",
+            "materials": [
+                "matte",
+                "glossy",
+                "65lb",
+                "110lb"
+            ],
+            "tags": [
+                "test",
+                "item"
+            ],
+            "img": "https://cms.cloudinary.vpsvc.com/images/c_scale,dpr_auto,f_auto,q_auto:best,t_productPageHeroGalleryTransformation_v2,w_auto/legacy_dam/en-us/S001378582/BCMX225-NA-bc-matte-roundedcorner-standard-referential-hero-001?cb=0f280a2b816378b9c93b8c83c68f644af2aa96c3"
+        },
+        {
+            "id": 3,
+            "name": "Test Product 3",
+            "description": "This is a test product",
+            "price": "10.00",
+            "category": "STICKER",
+            "materials": [
+                "matte",
+                "glossy",
+                "magnet"
+            ],
+            "tags": [
+                "test",
+                "item"
+            ],
+            "img": "https://cms.cloudinary.vpsvc.com/images/c_scale,dpr_auto,f_auto,q_auto:best,t_productPageHeroGalleryTransformation_v2,w_auto/legacy_dam/en-us/S001378582/BCMX225-NA-bc-matte-roundedcorner-standard-referential-hero-001?cb=0f280a2b816378b9c93b8c83c68f644af2aa96c3"
         }
     ]
 }
