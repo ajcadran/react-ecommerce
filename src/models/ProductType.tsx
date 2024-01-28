@@ -1,6 +1,8 @@
 export enum ProductType {
+    PRINT = "Print",
+    BADGE = "Badge",
     CARD = "Business Card",
-    STICKER = "Sticker",
+    STICKER = "Sticker"
 }
 
 const ProductTypes = Object.keys(ProductType).map(key => ({

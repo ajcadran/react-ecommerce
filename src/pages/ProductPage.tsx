@@ -21,7 +21,9 @@ const ProductPage = () => {
 
     return (
         <Box>
-            <Typography variant="h4">Products</Typography>
+            <Typography variant="h4" color="white">Products</Typography>
+
+            {/* <FilterBar allMaterialFilters={allMaterialFilters} materialFilter={materialFilter} handleMaterialFilterChange={handleMaterialFilterChange} /> */}
 
             <Grid id="container" container spacing={2} sx={{ padding: "0 8px" }}>
             {data.products.map(product => (

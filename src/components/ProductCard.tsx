@@ -6,7 +6,7 @@ const ProductCard = ({ product }) => {
     return (
         <Card>
                 <Box id="card-img">
-                    <img src={product.img} style={{ width: "100%", height: "100%" }} />
+                    <img src={product.img[0]} style={{ width: "100%", height: "100%" }} />
                 </Box>
                 <Box id="card-content">
                     <Box sx={{ padding: "8px", textAlign: "center" }}>
