@@ -18,11 +18,14 @@ const TopAppBar = () => {
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position="static" sx={{ backgroundColor: '#222' }}>
 				<Toolbar>
-					<ButtonBase onClick={() => navigate("/")} sx={{ flexGrow: 1, justifyContent: 'start' }}>
-						<Typography variant="h6" component="div">
-							Studio
-						</Typography>
-					</ButtonBase>
+					<Box sx={{ flexGrow: 1, justifyContent: 'start' }}>
+						<ButtonBase onClick={() => navigate("/")} sx={{ p: "8px 15px", borderRadius: "5px" }}>
+							<Typography variant="h6" component="div">
+								Studio
+							</Typography>
+						</ButtonBase>
+					</Box>
+					
 					
 					<Typography sx={{ float: 'right' }}>
 						Placeholder

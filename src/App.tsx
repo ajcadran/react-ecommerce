@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './shared/Layout';
+import ProductList from './pages/ProductList';
 import ProductPage from './pages/ProductPage';
-import ProductView from './pages/ProductView';
 
 const App = () => {
 
@@ -11,8 +11,8 @@ const App = () => {
 		<BrowserRouter>
 			<Routes>
 				<Route path="/" element={<Layout />}>
-					<Route index element={<ProductPage />} />
-					<Route path="/product/:id" element={<ProductView />} />
+					<Route index element={<ProductList />} />
+					<Route path="/products/:id" element={<ProductPage />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
