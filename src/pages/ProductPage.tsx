@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Box, Breadcrumbs, Button, Link, MenuItem, Select, SelectChangeEvent, Typography } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
-import data from '../test-data.json';
 import { ProductType } from "../models/ProductType";
 import { ProductModel } from "../models/ProductModel";
+
+import data from '../test-data.json';
 
 const ProductPage = () => {
 

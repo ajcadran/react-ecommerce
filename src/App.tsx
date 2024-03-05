@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from './shared/Layout';
 import ProductList from './pages/ProductList';
-import ProductPage from './pages/ProductPage';
+import ProductPage from './pages/ProductPage'; 
 
 const App = () => {
 

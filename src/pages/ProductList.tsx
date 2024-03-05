@@ -1,8 +1,9 @@
-import { Box, Button, ButtonBase, Grid, SelectChangeEvent, Typography } from "@mui/material";
+import { Box, ButtonBase, Grid, SelectChangeEvent, Typography } from "@mui/material";
 import React, { useState } from "react";
-import data from '../test-data.json';
 import ProductCard from "../components/ProductCard";
 import { useNavigate } from "react-router-dom";
+
+import data from '../test-data.json';
 
 const ProductList = () => {
 
@@ -27,8 +28,8 @@ const ProductList = () => {
 
             <Grid id="container" container spacing={2} sx={{ p: "20px" }}>
             {data.products.map(product => (
-                <Grid id={product.name} item xs={4}>
-                    <ButtonBase onClick={() => selectProduct(product.id)}>
+                <Grid id={product.name} item xs={6} sm={4}>
+                    <ButtonBase onClick={() => selectProduct(product.id)} sx={{ margin: "auto", width: "100%" }}>
                         <ProductCard product={product} />
                     </ButtonBase>
                 </Grid>

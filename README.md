@@ -1,3 +1,3 @@
 # Studio Name
 
-### A static website designed specifically for my studio
+### A static website designed for my print studio
