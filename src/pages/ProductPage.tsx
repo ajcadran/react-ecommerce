@@ -6,7 +6,7 @@ import { ProductModel } from "../models/ProductModel";
 
 import data from '../test-data.json';
 
-const ProductPage = () => {
+const ProductPage = ({ imgDir }) => {
 
     const navigate = useNavigate();
     const { id } = useParams();

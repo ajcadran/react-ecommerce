@@ -1,16 +1,21 @@
 import React from "react";
-import { Divider, Menu, MenuItem, AppBar, Box, Toolbar, Typography, ButtonBase } from '@mui/material';
+import { Divider, Menu, MenuItem, AppBar, Box, Toolbar, Typography, ButtonBase, Drawer, IconButton } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate } from "react-router-dom";
 
 const TopAppBar = () => {
 
 	const navigate = useNavigate();
-	const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-	const open = Boolean(anchorEl);
+	const [open, setOpen] = React.useState(false);
 
-	const handleClose = () => {
-		setAnchorEl(null);
+	const toggleDrawer = (newOpen: boolean) => () => {
+		setOpen(newOpen);
 	};
+
+	const goToPage = (loc: string) => () => {
+		setOpen(false);
+		navigate(loc);
+	}
 
 	// Return --------------------------------------------------------------
 
@@ -19,6 +24,7 @@ const TopAppBar = () => {
 			<AppBar position="static" sx={{ backgroundColor: '#222' }}>
 				<Toolbar>
 					<Box sx={{ flexGrow: 1, justifyContent: 'start' }}>
+						<IconButton onClick={toggleDrawer(!open)} sx={{ color: "white" }}><MenuIcon /></IconButton>
 						<ButtonBase onClick={() => navigate("/")} sx={{ p: "8px 15px", borderRadius: "5px" }}>
 							<Typography variant="h6" component="div">
 								Studio
@@ -26,26 +32,27 @@ const TopAppBar = () => {
 						</ButtonBase>
 					</Box>
 					
-					
 					<Typography sx={{ float: 'right' }}>
 						Placeholder
 					</Typography>
 				</Toolbar>
 			</AppBar>
-			<Menu
+			<Drawer
 				open={open}
-				onClose={handleClose}
+				onClose={toggleDrawer(false)}
 				sx={{ width: '100vw', height: '100vh', background: '#00000080' }}
-				anchorEl={anchorEl}
+				PaperProps={{ sx: {  pt: "15px", width: "250px", background: "#222", color: "white" } }}
 			>
-				<MenuItem>
-					<Typography sx={{ fontWeight: 'bold' }}>Add Timeline Item</Typography>
+				<Typography variant="h4" sx={{ margin: "0 auto", pb: "5px" }}>Studio Name</Typography>
+				<Divider sx={{ borderColor: "white", mx: "5px" }} />
+				<MenuItem onClick={goToPage("/")}>
+					<Typography variant="h5" sx={{ fontWeight: 'bold' }}>Products</Typography>
 				</MenuItem>
-				<Divider />
-			</Menu>
+				<MenuItem onClick={goToPage("/about")}>
+					<Typography variant="h5"  sx={{ fontWeight: 'bold' }}>About Us</Typography>
+				</MenuItem>
+			</Drawer>
 		</Box>
 	);
 }
 export default TopAppBar;
-
-//setNewItem({...newItem, date: newValue.target.value})

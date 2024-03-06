@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import data from '../test-data.json';
 
-const ProductList = () => {
+const ProductList = ({ imgDir }) => {
 
     const navigate = useNavigate();
 
@@ -30,7 +30,7 @@ const ProductList = () => {
             {data.products.map(product => (
                 <Grid id={product.name} item xs={6} sm={4}>
                     <ButtonBase onClick={() => selectProduct(product.id)} sx={{ margin: "auto", width: "100%" }}>
-                        <ProductCard product={product} />
+                        <ProductCard product={product} imgDir={imgDir} />
                     </ButtonBase>
                 </Grid>
             ))}
