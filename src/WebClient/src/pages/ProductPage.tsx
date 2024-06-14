@@ -24,7 +24,7 @@ const ProductPage = ({ imgDir }) => {
                 <Link underline="hover" href={`/products/${product.id}`}>{product.type}</Link>
             </Breadcrumbs>
             <Box id="product-view" sx={{ display: "flex" }}>
-                <ProductImageGallery product={product} />
+                <ProductImageGallery product={product} imgDir={imgDir} />
                 <ProductDetails product={product} />
             </Box>
         </Box>
@@ -68,6 +68,9 @@ const ProductDetails = ({ product }) => {
             <Typography variant="h6">$ {currentPrice.toFixed(2)}</Typography>
             <Typography>{product.description}</Typography>
             <RenderProductOptions />
+            <Box>
+                <Typography variant="h6">Contact Info</Typography>
+            </Box>
         </Box>
     );
 }
@@ -168,15 +171,15 @@ const ProductDetailsBusinessCard = ({ product }) => {
     );
 }
 
-const ProductImageGallery = ({ product }) => {
+const ProductImageGallery = ({ product, imgDir }) => {
 
     const [selectedImgIndex, setSelectedImgIndex] = useState(0);
 
     return (
         <Box id="product-img-gallery" sx={{ width: "55%" }}>
-            <img src={product.img[selectedImgIndex]} style={{ maxWidth: "100%", maxHeight: "72vh" }} />
+            <img src={`${imgDir}${product.img[selectedImgIndex]}`} style={{ maxWidth: "100%", maxHeight: "72vh" }} />
             <Box id="product-img-list" sx={{ width: "100%" }}>
-                {product.img.map((img, index) => <Button id={`img-btn-${index}`} onClick={() => setSelectedImgIndex(index)} sx={{ maxWidth: "20%", height: "10vh" }}><img src={img} style={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "5px", border: selectedImgIndex === index ? "2px solid orange" : "" }} /></Button>)}
+                {product.img.map((img, index) => <Button id={`img-btn-${index}`} onClick={() => setSelectedImgIndex(index)} sx={{ maxWidth: "20%", height: "10vh" }}><img src={`${imgDir}${img}`} style={{ maxWidth: "100%", maxHeight: "100%", borderRadius: "5px", border: selectedImgIndex === index ? "2px solid orange" : "" }} /></Button>)}
             </Box>
         </Box>
     );

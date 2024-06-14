@@ -27,7 +27,6 @@ const TopAppBar = () => {
 						<IconButton onClick={toggleDrawer(!open)} sx={{ color: "white" }}><MenuIcon /></IconButton>
 						<ButtonBase onClick={() => navigate("/")} sx={{ p: "8px 15px", borderRadius: "5px" }}>
 							<Typography variant="h6" component="div">
-								Studio
 							</Typography>
 						</ButtonBase>
 					</Box>
@@ -43,9 +42,11 @@ const TopAppBar = () => {
 				sx={{ width: '100vw', height: '100vh', background: '#00000080' }}
 				PaperProps={{ sx: {  pt: "15px", width: "250px", background: "#222", color: "white" } }}
 			>
-				<Typography variant="h4" sx={{ margin: "0 auto", pb: "5px" }}>Studio Name</Typography>
 				<Divider sx={{ borderColor: "white", mx: "5px" }} />
 				<MenuItem onClick={goToPage("/")}>
+					<Typography variant="h5" sx={{ fontWeight: 'bold' }}>Home</Typography>
+				</MenuItem>
+				<MenuItem onClick={goToPage("/products")}>
 					<Typography variant="h5" sx={{ fontWeight: 'bold' }}>Products</Typography>
 				</MenuItem>
 				<MenuItem onClick={goToPage("/about")}>
